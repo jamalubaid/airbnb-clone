@@ -82,14 +82,26 @@ const LoginModal: FC = () => {
 				outline
 				label="Continue with Google"
 				icon={FcGoogle}
-				onClick={() => {}}
+				onClick={() => signIn('google')}
 			/>
 			<Button
 				outline
 				label="Continue with GitHub"
 				icon={AiFillGithub}
-				onClick={() => {}}
+				onClick={() => signIn('github')}
 			/>
+{/*			<Button
+				outline
+				label="Continue with Mail.ru"
+				icon={SiMaildotru}
+				onClick={() => signIn('mailru')}
+			/>*/}
+{/*			<Button
+				outline
+				label="Continue with Mail.ru"
+				icon={SlSocialVkontakte}
+				onClick={() => signIn('vk')}
+			/>*/}
 			<div
 				className="
 					text-neutral-500

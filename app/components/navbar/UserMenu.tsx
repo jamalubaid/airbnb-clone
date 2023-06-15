@@ -1,6 +1,5 @@
 'use client';
 
-import { User } from '@prisma/client';
 import { signOut } from 'next-auth/react';
 import { FC, useCallback, useState } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
@@ -9,9 +8,10 @@ import Avatar from '@/app/components/Avatar';
 import MenuItem from '@/app/components/navbar/MenuItem';
 import useLoginModal from '@/app/hooks/useLoginModal';
 import useRegisterModal from '@/app/hooks/useRegisterModal';
+import { SafeUser } from '@/app/types'
 
 interface IUserMenu {
-	currentUser?: User | null;
+	currentUser?: SafeUser | null;
 }
 const UserMenu: FC<IUserMenu> = ({ currentUser }) => {
 	const registerModal = useRegisterModal();
@@ -21,7 +21,6 @@ const UserMenu: FC<IUserMenu> = ({ currentUser }) => {
 	const toggleOpen = useCallback(() => {
 		setIsOpen((value) => !value);
 	}, []);
-
 	return (
 		<div className="relative">
 			<div className="flex flex-row items-center gap-3">
@@ -66,7 +65,7 @@ const UserMenu: FC<IUserMenu> = ({ currentUser }) => {
 							md:block
 						"
 					>
-						<Avatar />
+						<Avatar src={currentUser?.image} />
 					</div>
 				</div>
 			</div>

@@ -7,7 +7,7 @@ import LoginModal from '@/app/components/modals/LoginModal';
 import RegisterModal from '@/app/components/modals/RegisterModal';
 import Navbar from '@/app/components/navbar/Navbar';
 import ToasterProvider from '@/app/providers/ToasterProvider';
-import getCurrentUser from '@/app/actions/getCurrentUser'
+import getCurrentUser from './actions/getCurrentUser'
 
 export const metadata = {
 	title: 'Airbnb',
