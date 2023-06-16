@@ -1,7 +1,7 @@
 'use client';
 
 import axios from 'axios';
-import { FC, useState } from 'react';
+import { FC, useCallback, useState } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { AiFillGithub } from 'react-icons/ai';
@@ -12,10 +12,13 @@ import Heading from '@/app/components/Heading';
 import Input from '@/app/components/inputs/Input';
 import Modal from '@/app/components/modals/Modal';
 import useRegisterModal from '@/app/hooks/useRegisterModal';
-import { signIn } from 'next-auth/react'
+import { signIn } from 'next-auth/react';
+import useLoginModal from '@/app/hooks/useLoginModal';
+import { SlSocialVkontakte } from 'react-icons/sl';
 
 const RegisterModal: FC = () => {
 	const registerModal = useRegisterModal();
+	const loginModal = useLoginModal();
 	const [isLoading, setIsLoading] = useState(false);
 
 	const {
@@ -45,6 +48,11 @@ const RegisterModal: FC = () => {
 				setIsLoading(false);
 			});
 	};
+
+	const toggle = useCallback(() => {
+		registerModal.onClose();
+		loginModal.onOpen();
+	}, [loginModal, registerModal]);
 
 	const bodyContent = (
 		<div className="flex flex-col gap-4">
@@ -92,13 +100,13 @@ const RegisterModal: FC = () => {
 				icon={AiFillGithub}
 				onClick={() => signIn('github')}
 			/>
-{/*			<Button
+			{/*			<Button
 				outline
 				label="Continue with Mail.ru"
 				icon={SiMaildotru}
 				onClick={() => signIn('mailru')}
 			/>*/}
-{/*			<Button
+			{/*			<Button
 				outline
 				label="Continue with Mail.ru"
 				icon={SlSocialVkontakte}
@@ -115,7 +123,7 @@ const RegisterModal: FC = () => {
 				<div className="justify-center flex flex-row items-center gap-2">
 					<div>Already have an account?</div>
 					<div
-						onClick={registerModal.onClose}
+						onClick={toggle}
 						className="text-neutral-800 cursor-pointer hover:underline"
 					>
 						Log in

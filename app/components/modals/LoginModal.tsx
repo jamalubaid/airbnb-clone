@@ -3,7 +3,7 @@
 import axios from 'axios';
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
-import { FC, useState } from 'react';
+import { FC, useCallback, useState } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { AiFillGithub } from 'react-icons/ai';
@@ -14,10 +14,12 @@ import Heading from '@/app/components/Heading';
 import Input from '@/app/components/inputs/Input';
 import Modal from '@/app/components/modals/Modal';
 import useLoginModal from '@/app/hooks/useLoginModal';
+import useRegisterModal from '@/app/hooks/useRegisterModal';
 
 const LoginModal: FC = () => {
 	const router = useRouter();
 	const loginModal = useLoginModal();
+	const registerModal = useRegisterModal();
 	const [isLoading, setIsLoading] = useState(false);
 
 	const {
@@ -51,6 +53,11 @@ const LoginModal: FC = () => {
 			}
 		});
 	};
+
+	const toggle = useCallback(() => {
+		loginModal.onClose();
+		registerModal.onOpen();
+	}, [loginModal, registerModal]);
 
 	const bodyContent = (
 		<div className="flex flex-col gap-4">
@@ -90,13 +97,13 @@ const LoginModal: FC = () => {
 				icon={AiFillGithub}
 				onClick={() => signIn('github')}
 			/>
-{/*			<Button
+			{/*			<Button
 				outline
 				label="Continue with Mail.ru"
 				icon={SiMaildotru}
 				onClick={() => signIn('mailru')}
 			/>*/}
-{/*			<Button
+			{/*			<Button
 				outline
 				label="Continue with Mail.ru"
 				icon={SlSocialVkontakte}
@@ -111,12 +118,12 @@ const LoginModal: FC = () => {
 				"
 			>
 				<div className="justify-center flex flex-row items-center gap-2">
-					<div>Already have an account?</div>
+					<div>First time using Airbnb?</div>
 					<div
-						onClick={loginModal.onClose}
+						onClick={toggle}
 						className="text-neutral-800 cursor-pointer hover:underline"
 					>
-						Log in
+						Create an account
 					</div>
 				</div>
 			</div>
