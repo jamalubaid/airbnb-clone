@@ -1,6 +1,5 @@
 'use client';
 
-import { User } from '@prisma/client';
 import { FC } from 'react';
 
 import Container from '@/app/components/Container';
@@ -8,6 +7,7 @@ import Logo from '@/app/components/navbar/Logo';
 import Search from '@/app/components/navbar/Search';
 import UserMenu from '@/app/components/navbar/UserMenu';
 import { SafeUser } from '@/app/types'
+import Categories from '@/app/components/navbar/Categories'
 
 interface INavbar {
 	currentUser?: SafeUser | null;
@@ -21,7 +21,9 @@ const Navbar: FC<INavbar> = ({ currentUser }) => {
 						<Logo />
 						<Search />
 						<UserMenu currentUser={currentUser} />
+
 					</div>
+					<Categories/>
 				</Container>
 			</div>
 		</div>
