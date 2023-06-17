@@ -3,7 +3,7 @@ import { FC } from 'react';
 interface IHeadingProps {
 	title: string;
 	subtitle?: string;
-	center?: string;
+	center?: boolean;
 }
 const Heading: FC<IHeadingProps> = ({ title, center, subtitle }) => {
 	return (

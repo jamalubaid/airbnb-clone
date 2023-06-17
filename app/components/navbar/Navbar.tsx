@@ -23,8 +23,8 @@ const Navbar: FC<INavbar> = ({ currentUser }) => {
 						<UserMenu currentUser={currentUser} />
 					</div>
 				</Container>
-				<Categories />
 			</div>
+			<Categories />
 		</div>
 	);
 };
