@@ -49,7 +49,7 @@ const ListingReservation: FC<IListingReservationProps> = ({
 			/>
 			<hr />
 			<div className="p-4">
-				<Button label="Reserve" onClick={onSubmit} disabled={disabled} />
+				<Button label="Reserve" onClick={onSubmit} />
 			</div>
 			<div
 				className="

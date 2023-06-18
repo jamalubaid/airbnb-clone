@@ -10,11 +10,13 @@ import useLoginModal from '@/app/hooks/useLoginModal';
 import useRegisterModal from '@/app/hooks/useRegisterModal';
 import { SafeUser } from '@/app/types';
 import useRentModal from '@/app/hooks/useRentModal';
+import { useRouter } from 'next/navigation';
 
 interface IUserMenu {
 	currentUser?: SafeUser | null;
 }
 const UserMenu: FC<IUserMenu> = ({ currentUser }) => {
+	const router = useRouter();
 	const registerModal = useRegisterModal();
 	const loginModal = useLoginModal();
 	const rentModal = useRentModal();
@@ -107,9 +109,15 @@ const UserMenu: FC<IUserMenu> = ({ currentUser }) => {
 					>
 						{currentUser ? (
 							<>
-								<MenuItem onClick={() => {}} label="My trips" />
+								<MenuItem
+									onClick={() => router.push('/trips')}
+									label="My trips"
+								/>
 								<MenuItem onClick={() => {}} label="My favorites" />
-								<MenuItem onClick={() => {}} label="My reservations" />
+								<MenuItem
+									onClick={() => router.push('/reservations')}
+									label="My reservations"
+								/>
 								<MenuItem onClick={() => {}} label="My properties" />
 								<MenuItem onClick={rentModal.onOpen} label="Airbnb my home" />
 								<MenuItem onClick={() => signOut()} label="Logout" />

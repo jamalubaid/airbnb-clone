@@ -2,7 +2,7 @@
 
 import { FC, useCallback, useEffect, useMemo, useState } from 'react';
 import { Reservation } from '@prisma/client';
-import { SafeListing, SafeUser } from '@/app/types';
+import { SafeListing, SafeReservation, SafeUser } from '@/app/types';
 import { categories } from '@/app/components/navbar/Categories';
 import Container from '@/app/components/Container';
 import ListingHead from '@/app/components/listings/ListingHead';
@@ -26,7 +26,7 @@ const initialDateRange = {
 };
 
 interface IListingClientProps {
-	reservations?: Reservation[];
+	reservations?: SafeReservation[];
 	listing: SafeListing & {
 		user: SafeUser;
 	};
@@ -60,13 +60,13 @@ const ListingClient: FC<IListingClientProps> = ({
 	const [totalPrice, setTotalPrice] = useState(listing.price);
 	const [dateRange, setDateRange] = useState<Range>(initialDateRange);
 
-	const onCreateReservation = useCallback(() => {
+	const onCreateReservation = useCallback(async () => {
 		if (!currentUser) {
 			return loginModal.onOpen();
 		}
 
 		setIsLoading(true);
-
+		/*		await axios.post('/api/users');*/
 		axios
 			.post('/api/reservations', {
 				totalPrice,
@@ -77,7 +77,7 @@ const ListingClient: FC<IListingClientProps> = ({
 			.then(() => {
 				toast.success('Listing reserved!');
 				setDateRange(initialDateRange);
-				router.refresh();
+				router.push('/trips');
 			})
 			.catch(() => {
 				toast.error('Something went wrong.');
