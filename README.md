@@ -1,6 +1,9 @@
 # Airbnb Clone with Next.js 13 App Router: React, Tailwind, Prisma, MongoDB, NextAuth 2023
 
-https://github-production-user-asset-6210df.s3.amazonaws.com/64312144/246891702-15470137-b6b7-4b00-bec5-07ed17e0b912.jpg
+<a href="https://github-production-user-asset-6210df.s3.amazonaws.com/64312144/246891702-15470137-b6b7-4b00-bec5-07ed17e0b912.jpg" target="_blank">
+  <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/64312144/246891702-15470137-b6b7-4b00-bec5-07ed17e0b912.jpg" width="1400"/>
+</a>
+
 
 This is a repository for a Airbnb Clone with Next.js 13 App Router: React, Tailwind, Prisma, MongoDB, NextAuth.
 
