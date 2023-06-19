@@ -19,6 +19,7 @@ import { usePathname, useSearchParams } from 'next/navigation';
 import { FaSkiing } from 'react-icons/fa';
 import { BsSnow } from 'react-icons/bs';
 import { IoDiamond } from 'react-icons/io5';
+import { IoIosHome } from 'react-icons/io';
 
 export const categories = [
 	{
@@ -96,7 +97,13 @@ export const categories = [
 		icon: IoDiamond,
 		description: 'This property is luxurious!',
 	},
+	{
+		label: 'Cabins',
+		icon: IoIosHome,
+		description: 'This property  is in the cabins!',
+	},
 ];
+
 const Categories: FC = () => {
 	const params = useSearchParams();
 	const category = params?.get('category');
