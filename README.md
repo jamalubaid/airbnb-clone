@@ -1,42 +1,36 @@
-# Airbnb Clone with Next.js 13 App Router: React, Tailwind, Prisma, MongoDB, NextAuth 2023
+# Airbnb клон. Стек: Next.js 13: React, Tailwind, Prisma, MongoDB, NextAuth.
 
 <a href="https://github-production-user-asset-6210df.s3.amazonaws.com/64312144/246891702-15470137-b6b7-4b00-bec5-07ed17e0b912.jpg" target="_blank">
   <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/64312144/246891702-15470137-b6b7-4b00-bec5-07ed17e0b912.jpg" width="1400"/>
 </a>
 
+Airbnb клон.
+Стек: Next.js 13: React, Tailwind, Prisma, MongoDB, NextAuth.
 
-This is a repository for a Airbnb Clone with Next.js 13 App Router: React, Tailwind, Prisma, MongoDB, NextAuth.
-
-[Example](https://airbnb-clone-flame-one.vercel.app)
+[Пример](https://airbnb-clone-flame-one.vercel.app)
 
 Features:
 
-- Tailwind design
-- Tailwind animations and effects
-- Full responsiveness
-- Credential authentication
-- Google authentication
-- Github authentication
-- Image upload using Cloudinary CDN
-- Client form validation and handling using react-hook-form
-- Server error handling using react-toast
-- Calendars with react-date-range
-- Page loading state
-- Page empty state
-- Booking / Reservation system
-- Guest reservation cancellation
-- Owner reservation cancellation
-- Creation and deletion of properties
-- Pricing calculation
-- Advanced search algorithm by category, date range, map location, number of guests, rooms and bathrooms
-- For example we will filter out properties that have a reservation in your desired date range to travel
-- Favorites system
-- Shareable URL filters
-- Lets say you select a category, location and date range, you will be able to share URL with a logged out friend in another browser and they will see the same results
-- How to write POST and DELETE routes in route handlers (app/api)
-- How to fetch data in server react components by directly accessing database (WITHOUT API! like Magic!)
-- How to handle files like error.tsx and loading.tsx which are new Next 13 templating files to unify loading and error handling
-- How to handle relations between Server and Child components!
+- Tailwind
+- Анимация и эффекты на Tailwind
+- Полная отзывчивость
+- Аутентификация учетных данных
+- Google-аутентификация
+- Аутентификация на Гитхабе
+- Загрузка изображений с помощью Cloudinary CDN.
+- Проверка и обработка клиентской формы с использованием формы реагирования.
+- Обработка ошибок сервера с помощью React-Toast.
+- Календари с диапазоном реагирующих дат
+- Состояние загрузки страницы
+- Состояние пустой страницы
+- Система бронирования/бронирования
+- Отмена бронирования гостя
+- Отмена бронирования владельцем
+- Создание и удаление свойств
+- Расчет цены
+- Алгоритм расширенного поиска по категориям, диапазону дат, местоположению на карте, количеству гостей, комнатам и ванным комнатам.
+- Система избранного
+- Общие фильтры URL-адресов
 
 ### Prerequisites
 
