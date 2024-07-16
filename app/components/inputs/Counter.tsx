@@ -7,7 +7,7 @@ interface ICounterProps {
 	title: string;
 	subtitle: string;
 	value: number;
-	onChange: (value: number) => void;
+	// onChange: (value: number) => void;
 }
 
 const Counter: FC<ICounterProps> = ({ onChange, value, subtitle, title }) => {
